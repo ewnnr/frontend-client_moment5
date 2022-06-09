@@ -1,0 +1,26 @@
+@import 'base';
+.container {
+    font: 100% $bodyfont;
+}
+
+.courses {
+    background-color: $background-color;
+    width: 30%;
+    font-size: $basesize;
+}
+
+button {
+    @include button;
+}
+
+b {
+    margin-left: 0.5%;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    font-size: $h3;
+}

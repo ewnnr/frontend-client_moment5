@@ -1,0 +1,49 @@
+    //Variabler
+    $bodyfont: monospace;
+    $background-color: rgb(255, 183, 195);
+    $darker: darken($background-color, 12%);
+    $basesize: 18px;
+    $h2: 45px;
+    $h3: 25px;
+    //Body maxbredd
+    body {
+        max-width: 1920px;
+    }
+    
+    //Olika mixins 
+    @mixin h2 {
+        font-size: $h2;
+        border-bottom: dotted 2px $background-color;
+        width: 30%;
+        text-align: center;
+    }
+    
+    @mixin button {
+        font-family: $bodyfont;
+        font-size: 22px;
+        background-color: $darker;
+        color: white;
+        margin-top: 3%;
+        margin-bottom: 1%;
+        margin-left: 0.5%;
+        padding: 0.1%;
+    }
+    
+    //Mixins för breakpoints
+    @mixin bp($point) {
+        @if $point==screen-max {
+            @media (max-width: 1600px) {
+                @content;
+            }
+        }
+        @else if $point==screen-medium {
+            @media (max-width: 1250px) {
+                @content;
+            }
+        }
+        @else if $point==screen-min {
+            @media (max-width: 600px) {
+                @content;
+            }
+        }
+    }
